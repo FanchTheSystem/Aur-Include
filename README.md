@@ -7,7 +7,9 @@ You must have your ssh key authorized, see : https://wiki.archlinux.org/index.ph
 
 You should add this alias in your .bashrc :
 
-``alias aur_source='. ~/Aur-Include/aur.include.sh'``
+```shell
+alias aur_source='. ~/Aur-Include/aur.include.sh'
+```
 
 
 
