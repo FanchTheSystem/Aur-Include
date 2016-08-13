@@ -47,6 +47,7 @@ aur_clone () {
 aur_make () {
     aur_go "$1"
     echo "Make:" "$1"
+    updpkgsums
     makepkg -c -f
     makepkg --printsrcinfo > .SRCINFO
 #    mksrcinfo
