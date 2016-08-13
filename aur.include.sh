@@ -12,10 +12,10 @@ aur_go () {
     then
 	res="ko"
 	if [ -d "$1" ]
-	   then
-	       cd "$1"
-               echo "Current:" $(pwd)
-	       res="ok"
+	then
+	    cd "$1"
+            echo "Current:" $(pwd)
+	    res="ok"
 	fi
     fi
 
@@ -24,7 +24,7 @@ aur_go () {
     
     if [ res == "ko" ]
     then
-       kill -INT $$
+	kill -INT $$
         #exit 42
     fi
 }
@@ -41,7 +41,7 @@ aur_clone_make () {
 aur_clone () {
     aur_go
     echo "Clone:" "$1"
-   git clone ssh+git://aur@aur.archlinux.org/"$1".git
+    git clone ssh+git://aur@aur.archlinux.org/"$1".git
 }
 
 aur_make () {
@@ -50,7 +50,7 @@ aur_make () {
     updpkgsums
     makepkg -c -f
     makepkg --printsrcinfo > .SRCINFO
-#    mksrcinfo
+    #    mksrcinfo
 }
 
 
@@ -80,8 +80,8 @@ aur_git_add () {
 
 aur_git_add_pkg () {
     aur_go "$1"
-      aur_git_add "$1" PKGBUILD 
-      aur_git_add "$1" .SRCINFO
+    aur_git_add "$1" PKGBUILD 
+    aur_git_add "$1" .SRCINFO
 }
 
 
