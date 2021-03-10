@@ -42,6 +42,9 @@ aur_clone () {
     aur_go
     echo "Clone:" "$1"
     git clone ssh+git://aur@aur.archlinux.org/"$1".git
+
+    aur_go "$1"
+    git pull
 }
 
 aur_make () {
